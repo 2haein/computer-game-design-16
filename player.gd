@@ -8,7 +8,8 @@ var cooldown = 0
 const COOLDOWN = 8
 
 onready var guns = [$Gun0, $Gun1]
-onready var main = get_tree().current_scene
+onready var main = get_node("/root/globall").current_scene
+# onready var main = get_tree().current_scene
 var Power = load("res://Bullet.tscn")
 
 func _physics_process(delta):

@@ -1,6 +1,6 @@
 extends Spatial
 
-onready var main = get_tree().current_scene
+onready var main =  get_node("/root/globall").current_scene
 var Enemy = load("res://Enemy.tscn")
 
 func spawn():

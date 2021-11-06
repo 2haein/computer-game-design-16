@@ -2,7 +2,7 @@ extends KinematicBody
 
 var velocity = Vector3()
 var KillParticles = load("res://KillParticles.tscn")
-onready var main = get_tree().current_scene
+onready var main =  get_node("/root/globall").current_scene
 onready var explodeSound = $EnemyExplode
  
 func _physics_process(delta):
