@@ -14,7 +14,7 @@ onready var guns = [$Gun0, $Gun1]
 onready var main = get_node("/root/globall").current_scene
 
 # onready var main = get_tree().current_scene
-var Power = load("res://Player/Bullet.tscn")
+var Power = load("res://Bullet.tscn")
 
 func _ready():
 	print("player ready called")
