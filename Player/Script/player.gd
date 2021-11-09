@@ -2,12 +2,15 @@ extends KinematicBody
 
 const SPEED = 30
 const accel = 0.75
+const MaxPowerUp = 5
 var inputVector = Vector3()
 var velocity = Vector3()
 var cooldown = 0
 var KillParticles = load("res://KillParticles.tscn")
 
-var COOLDOWN = 25 #공격 쿨탐
+var COOLDOWN = 20 #공격 쿨탐
+var powerUp = 0
+var bomb = 3
 
 onready var explodeSound = $EnemyExplode
 onready var guns = [$Gun0, $Gun1]
@@ -17,7 +20,8 @@ onready var main = get_node("/root/globall").current_scene
 var Power = load("res://Bullet.tscn")
 
 func _ready():
-	print("player ready called")
+	UpdatePowerUpUI()
+	UpdateBombUI()
 	pass
 	
 func _physics_process(delta):
@@ -62,8 +66,10 @@ func Shoot(delta):
 	pass
 	
 func Bomb():
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("ui_accept") and bomb > 0:
+		bomb -=1;
 		print("Throw Bomb!")
+		UpdateBombUI()
 	pass
 	
 # player collision
@@ -78,7 +84,17 @@ func _on_Area_body_entered(body):
 		queue_free()
 	elif body.is_in_group("PowerUp"):
 		body.queue_free()
-		if(COOLDOWN>5):
-			COOLDOWN -= 5
 		#play power up sound, effect 
+		if(powerUp < MaxPowerUp):
+			powerUp +=1
+			COOLDOWN -= 5
+			UpdatePowerUpUI()
+	pass
+
+func UpdatePowerUpUI():
+	main.get_node("UI").get_node("PowerUpContainer").SetIcon(powerUp)
+	pass
+	
+func UpdateBombUI():
+	main.get_node("UI").get_node("BombContainer").SetIcon(bomb)
 	pass

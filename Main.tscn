@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Player/Script/PlayerSpawner.gd" type="Script" id=1]
 [ext_resource path="res://EnemySpawner.tscn" type="PackedScene" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://Player/Script/IconContainer.gd" type="Script" id=6]
 [ext_resource path="res://Player/Image/powerUp.png" type="Texture" id=7]
 [ext_resource path="res://Player/Font/scoreFont.tres" type="DynamicFont" id=8]
+[ext_resource path="res://Player/Script/Score.gd" type="Script" id=9]
+[ext_resource path="res://Player/Image/bomb.png" type="Texture" id=10]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -63,7 +65,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Heart0" type="TextureRect" parent="UI/HeartsContainer"]
+[node name="Icon0" type="TextureRect" parent="UI/HeartsContainer"]
 modulate = Color( 1, 1, 1, 0.784314 )
 margin_right = 50.0
 margin_bottom = 50.0
@@ -74,7 +76,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Heart1" type="TextureRect" parent="UI/HeartsContainer"]
+[node name="Icon1" type="TextureRect" parent="UI/HeartsContainer"]
 modulate = Color( 1, 1, 1, 0.784314 )
 margin_left = 50.0
 margin_right = 100.0
@@ -87,7 +89,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Heart2" type="TextureRect" parent="UI/HeartsContainer"]
+[node name="Icon2" type="TextureRect" parent="UI/HeartsContainer"]
 modulate = Color( 1, 1, 1, 0.784314 )
 margin_left = 100.0
 margin_right = 150.0
@@ -101,15 +103,16 @@ __meta__ = {
 }
 
 [node name="PowerUpContainer" type="Control" parent="UI"]
-margin_top = 930.0
+modulate = Color( 1, 1, 1, 0.784314 )
+margin_top = 880.0
 margin_right = 40.0
-margin_bottom = 970.0
+margin_bottom = 920.0
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PowerUp0" type="TextureRect" parent="UI/PowerUpContainer"]
+[node name="Icon0" type="TextureRect" parent="UI/PowerUpContainer"]
 margin_right = 50.0
 margin_bottom = 50.0
 texture = ExtResource( 7 )
@@ -119,7 +122,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PowerUp1" type="TextureRect" parent="UI/PowerUpContainer"]
+[node name="Icon1" type="TextureRect" parent="UI/PowerUpContainer"]
 margin_left = 50.0
 margin_right = 100.0
 margin_bottom = 50.0
@@ -130,7 +133,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PowerUp2" type="TextureRect" parent="UI/PowerUpContainer"]
+[node name="Icon2" type="TextureRect" parent="UI/PowerUpContainer"]
 margin_left = 100.0
 margin_right = 150.0
 margin_bottom = 50.0
@@ -141,14 +144,57 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="BombContainer" type="Control" parent="UI"]
+modulate = Color( 1, 1, 1, 0.784314 )
+margin_top = 930.0
+margin_right = 40.0
+margin_bottom = 970.0
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Icon0" type="TextureRect" parent="UI/BombContainer"]
+margin_right = 50.0
+margin_bottom = 50.0
+texture = ExtResource( 10 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Icon1" type="TextureRect" parent="UI/BombContainer"]
+margin_left = 50.0
+margin_right = 100.0
+margin_bottom = 50.0
+texture = ExtResource( 10 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Icon2" type="TextureRect" parent="UI/BombContainer"]
+margin_left = 100.0
+margin_right = 150.0
+margin_bottom = 50.0
+texture = ExtResource( 10 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Score" type="RichTextLabel" parent="UI"]
-margin_left = 1231.0
-margin_top = 7.0
-margin_right = 1393.0
-margin_bottom = 34.0
+margin_left = 1270.06
+margin_top = 3.22023
+margin_right = 1432.06
+margin_bottom = 30.2202
 custom_fonts/normal_font = ExtResource( 8 )
 tab_size = 0
-text = "Score : 9999999"
+text = "Score : 0"
+script = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
