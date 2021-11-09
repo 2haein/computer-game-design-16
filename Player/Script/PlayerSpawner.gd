@@ -27,7 +27,7 @@ func OnPlayerDead():
 
 func SetHp(val):
 	life = val
-	main.get_node("UI").get_node("HeartsContainer").SetHp(life)
+	main.get_node("UI").get_node("HeartsContainer").SetIcon(life)
 	
 func GameOver():
 	pass

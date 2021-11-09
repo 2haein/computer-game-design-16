@@ -1,11 +1,11 @@
 extends Node
 
 
-onready var hearts = [$Heart0, $Heart1 ,$Heart2]
+onready var icons = [$Icon0, $Icon1 ,$Icon2]
 
-func SetHp(val):
+func SetIcon(val):
 	print(val)
-	for i in range(len(hearts)):
-		hearts[i].visible = false
+	for i in range(len(icons)):
+		icons[i].visible = false
 	for i in range(val):
-		hearts[i].visible = true
+		icons[i].visible = true
