@@ -74,4 +74,3 @@ texture = ExtResource( 6 )
 stretch_mode = 3
 
 [connection signal="mouse_entered" from="HBoxContainer/VBoxContainer/VBoxContainer/NewGame" to="HBoxContainer/VBoxContainer/VBoxContainer/NewGame" method="_on_NewGame_mouse_entered"]
-[connection signal="tree_entered" from="HBoxContainer/VBoxContainer/VBoxContainer/NewGame" to="HBoxContainer/VBoxContainer/VBoxContainer/NewGame" method="_on_NewGame_tree_entered"]
