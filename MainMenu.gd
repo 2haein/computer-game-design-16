@@ -7,3 +7,7 @@ func _ready():
 func _on_NewGame_mouse_entered():
 	get_node("/root/globall").goto_scene("res://Main.tscn")
 	pass
+	
+func _on_Exit_mouse_entered():
+	get_node("/root/globall").goto_scene("res://Main.tscn")
+	pass
