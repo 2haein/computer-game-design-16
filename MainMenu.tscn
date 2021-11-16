@@ -92,6 +92,6 @@ margin_bottom = 547.0
 texture = ExtResource( 5 )
 stretch_mode = 3
 
-[connection signal="mouse_entered" from="HBoxContainer/VBoxContainer/VBoxContainer/NewGame" to="HBoxContainer/VBoxContainer/VBoxContainer/NewGame" method="_on_NewGame_mouse_entered"]
-[connection signal="mouse_entered" from="HBoxContainer/VBoxContainer/VBoxContainer/Tutorial" to="HBoxContainer/VBoxContainer/VBoxContainer/Tutorial" method="_on_NewGame_mouse_entered"]
-[connection signal="mouse_entered" from="HBoxContainer/VBoxContainer/VBoxContainer/Exit" to="HBoxContainer/VBoxContainer/VBoxContainer/Exit" method="_on_Exit_mouse_entered"]
+[connection signal="gui_input" from="HBoxContainer/VBoxContainer/VBoxContainer/NewGame" to="HBoxContainer/VBoxContainer/VBoxContainer/NewGame" method="_on_NewGame_gui_input"]
+[connection signal="gui_input" from="HBoxContainer/VBoxContainer/VBoxContainer/Tutorial" to="HBoxContainer/VBoxContainer/VBoxContainer/NewGame" method="_on_Tutorial_gui_input"]
+[connection signal="gui_input" from="HBoxContainer/VBoxContainer/VBoxContainer/Exit" to="HBoxContainer/VBoxContainer/VBoxContainer/NewGame" method="_on_Exit_gui_input"]
