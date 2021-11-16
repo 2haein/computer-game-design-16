@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/main_menu/game_title.png" type="Texture" id=1]
 [ext_resource path="res://MainMenu.gd" type="Script" id=2]
@@ -6,14 +6,11 @@
 [ext_resource path="res://assets/main_menu/exit.png" type="Texture" id=4]
 [ext_resource path="res://assets/main_menu/version.png" type="Texture" id=5]
 [ext_resource path="res://assets/main_menu/game_start.png" type="Texture" id=6]
+[ext_resource path="res://Player/Image/backgroundHigh.png" type="Texture" id=7]
 
 [node name="MainMenu" type="MarginContainer"]
 anchor_right = 0.004
 anchor_bottom = 0.006
-margin_left = 6.0
-margin_top = 6.0
-margin_right = 1400.0
-margin_bottom = 800.0
 custom_constants/margin_right = 0
 custom_constants/margin_top = 0
 custom_constants/margin_left = 120
@@ -22,9 +19,30 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Control" type="Control" parent="."]
+margin_left = 120.0
+margin_right = 1358.0
+margin_bottom = 1032.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+margin_left = -195.0
+margin_top = -40.0
+margin_right = 1370.0
+margin_bottom = 1153.0
+rect_pivot_offset = Vector2( 1232.62, 291.895 )
+texture = ExtResource( 7 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 margin_left = 120.0
-margin_right = 1399.0
+margin_right = 1358.0
 margin_bottom = 1032.0
 mouse_filter = 0
 alignment = 1
@@ -79,15 +97,14 @@ __meta__ = {
 
 [node name="CenterContainer" type="CenterContainer" parent="HBoxContainer"]
 margin_left = 1038.0
-margin_right = 1279.0
+margin_right = 1238.0
 margin_bottom = 1032.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Version" type="TextureRect" parent="HBoxContainer/CenterContainer"]
-margin_left = 20.0
 margin_top = 485.0
-margin_right = 220.0
+margin_right = 200.0
 margin_bottom = 547.0
 texture = ExtResource( 5 )
 stretch_mode = 3

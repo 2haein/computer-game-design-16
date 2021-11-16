@@ -22,7 +22,7 @@ func _on_NewGame_gui_input(event):
 
 func _on_Tutorial_gui_input(event):
 	if event is InputEventMouseButton:
-		get_node("/root/globall").goto_scene("res://Main.tscn")
+		get_node("/root/globall").goto_scene("res://Tutorial.tscn")
 		pass # Replace with function body.
 
 
