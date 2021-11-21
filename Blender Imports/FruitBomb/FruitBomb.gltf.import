@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/penguin.gltf-765f22f0d4e0d5225cb3ad9ab67d44d2.scn"
+path="res://.import/FruitBomb.gltf-40a91b1b8b749c87305d06261140258f.scn"
 
 [deps]
 
-source_file="res://Blender Imports/penguin.gltf"
-dest_files=[ "res://.import/penguin.gltf-765f22f0d4e0d5225cb3ad9ab67d44d2.scn" ]
+source_file="res://Blender Imports/FruitBomb/FruitBomb.gltf"
+dest_files=[ "res://.import/FruitBomb.gltf-40a91b1b8b749c87305d06261140258f.scn" ]
 
 [params]
 
@@ -18,7 +18,7 @@ nodes/custom_script=""
 nodes/storage=0
 nodes/use_legacy_names=false
 materials/location=1
-materials/storage=2
+materials/storage=1
 materials/keep_on_reimport=true
 meshes/compress=true
 meshes/ensure_tangents=true

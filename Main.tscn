@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Player/Script/PlayerSpawner.gd" type="Script" id=1]
 [ext_resource path="res://EnemySpawner.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Player/Image/bomb.png" type="Texture" id=10]
 [ext_resource path="res://assets/main_menu/exit.png" type="Texture" id=11]
 [ext_resource path="res://MainMenu.gd" type="Script" id=12]
+[ext_resource path="res://Player/PowerUpSpawner.tscn" type="PackedScene" id=13]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -24,6 +25,8 @@ far = 300.0
 
 [node name="EnemySpawner" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -300 )
+
+[node name="PowerUpSpawner" parent="." instance=ExtResource( 13 )]
 
 [node name="PlayerSpawner" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10 )
@@ -39,8 +42,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -250 )
 environment = SubResource( 1 )
 
 [node name="Control" type="Control" parent="WorldEnvironment"]
-margin_right = 1413.0
-margin_bottom = 997.0
+margin_right = 1400.0
+margin_bottom = 1100.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -49,7 +52,7 @@ __meta__ = {
 margin_left = -7.0
 margin_top = -1.0
 margin_right = 1411.0
-margin_bottom = 999.0
+margin_bottom = 1099.0
 rect_pivot_offset = Vector2( 1232.62, 291.895 )
 texture = ExtResource( 3 )
 expand = true
@@ -107,9 +110,10 @@ __meta__ = {
 
 [node name="PowerUpContainer" type="Control" parent="UI"]
 modulate = Color( 1, 1, 1, 0.784314 )
-margin_top = 880.0
-margin_right = 40.0
-margin_bottom = 920.0
+margin_left = 7.93701
+margin_top = 991.118
+margin_right = 47.937
+margin_bottom = 1031.12
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -149,9 +153,10 @@ __meta__ = {
 
 [node name="BombContainer" type="Control" parent="UI"]
 modulate = Color( 1, 1, 1, 0.784314 )
-margin_top = 930.0
-margin_right = 40.0
-margin_bottom = 970.0
+margin_left = 7.93701
+margin_top = 1041.12
+margin_right = 47.937
+margin_bottom = 1081.12
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false

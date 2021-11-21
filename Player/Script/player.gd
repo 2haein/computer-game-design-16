@@ -2,7 +2,7 @@ extends KinematicBody
 
 const SPEED = 30
 const accel = 0.75
-const MaxPowerUp = 5
+const MaxPowerUp = 3
 var inputVector = Vector3()
 var velocity = Vector3()
 var cooldown = 0
@@ -17,7 +17,8 @@ onready var guns = [$Gun0, $Gun1]
 onready var main = get_node("/root/globall").current_scene
 
 # onready var main = get_tree().current_scene
-var Power = load("res://Bullet.tscn")
+var Bullet = load("res://Bullet.tscn")
+var FruitBomb = load("res://Player/FruitBomb.tscn")
 
 func _ready():
 	UpdatePowerUpUI()
@@ -56,10 +57,10 @@ func Shoot(delta):
 	if Input.is_action_pressed("ui_select") and cooldown <= 0:
 		cooldown = COOLDOWN * delta
 		for i in guns:
-			var power = Power.instance()
-			main.add_child(power)
-			power.transform = i.global_transform
-			power.velocity = power.transform.basis.z * -600
+			var bullet = Bullet.instance()
+			main.add_child(bullet)
+			bullet.transform = i.global_transform
+			bullet.velocity = bullet.transform.basis.z * -600
 	#cooldown
 	if cooldown > 0:
 		cooldown -= delta
@@ -68,7 +69,11 @@ func Shoot(delta):
 func Bomb():
 	if Input.is_action_just_pressed("ui_accept") and bomb > 0:
 		bomb -=1;
-		print("Throw Bomb!")
+		var fruit = FruitBomb.instance()
+		main.add_child(fruit)
+		fruit.transform = global_transform
+		#fruit.scale = Vector3(25,25,25)
+		fruit.velocity = fruit.transform.basis.z * - 90
 		UpdateBombUI()
 	pass
 	
@@ -84,10 +89,9 @@ func _on_Area_body_entered(body):
 		queue_free()
 	elif body.is_in_group("PowerUp"):
 		body.queue_free()
-		#play power up sound, effect 
 		if(powerUp < MaxPowerUp):
-			powerUp +=1
-			COOLDOWN -= 5
+			powerUp += 1
+			COOLDOWN -= 3
 			UpdatePowerUpUI()
 	pass
 

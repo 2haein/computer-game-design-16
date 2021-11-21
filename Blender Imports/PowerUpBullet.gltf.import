@@ -2,23 +2,23 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/penguin.gltf-765f22f0d4e0d5225cb3ad9ab67d44d2.scn"
+path="res://.import/PowerUpBullet.gltf-2057343f7e93cb613030848b046ffd60.scn"
 
 [deps]
 
-source_file="res://Blender Imports/penguin.gltf"
-dest_files=[ "res://.import/penguin.gltf-765f22f0d4e0d5225cb3ad9ab67d44d2.scn" ]
+source_file="res://Blender Imports/PowerUpBullet.gltf"
+dest_files=[ "res://.import/PowerUpBullet.gltf-2057343f7e93cb613030848b046ffd60.scn" ]
 
 [params]
 
 nodes/root_type="Spatial"
 nodes/root_name="Scene Root"
-nodes/root_scale=1.0
+nodes/root_scale=10.0
 nodes/custom_script=""
 nodes/storage=0
 nodes/use_legacy_names=false
 materials/location=1
-materials/storage=2
+materials/storage=1
 materials/keep_on_reimport=true
 meshes/compress=true
 meshes/ensure_tangents=true

@@ -4,11 +4,15 @@ var velocity = Vector3()
 var KillParticles = load("res://KillParticles.tscn")
 onready var main =  get_node("/root/globall").current_scene
 onready var explodeSound = $EnemyExplode
-const bulletHitScore = 10
+const bombHitScore = 10
+const ROTATE = 3
+
 func _physics_process(delta):
 	move_and_slide(velocity)
+	rotate_x(ROTATE*delta)
 	if transform.origin.z < -300:
 		queue_free()
+	
 
 func _on_Area_body_entered(body):
 	if body.is_in_group("Enemies"):
@@ -17,12 +21,7 @@ func _on_Area_body_entered(body):
 		particles.transform.origin = transform.origin
 		body.queue_free()
 		explodeSound.play()
-		GetScore(bulletHitScore)
-		visible = false
-		$Area/CollisionShape.disabled = true
-
-func _on_LightTimer_timeout():
-	$OmniLight.visible = false
+		GetScore(bombHitScore)
 
 func GetScore(val):
 	main.get_node("UI").get_node("Score").AddScore(val)
