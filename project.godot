@@ -25,10 +25,10 @@ globall="*res://global.gd"
 [display]
 
 window/size/width=1400
-window/size/height=980
+window/size/height=1100
 window/size/resizable=false
 window/size/test_width=1400
-window/size/test_height=980
+window/size/test_height=1100
 
 [input]
 
