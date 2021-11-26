@@ -30,6 +30,7 @@ func SetHp(val):
 	main.get_node("UI").get_node("HeartsContainer").SetIcon(life)
 	
 func GameOver():
+	get_node("/root/globall").goto_scene("res://GameOver.tscn")
 	pass
 
 
@@ -37,3 +38,4 @@ func _on_Exit_gui_input(event):
 	if event is InputEventMouseButton:
 		get_node("/root/globall").goto_scene("res://MainMenu.tscn")
 		pass # Replace with function body.
+		
