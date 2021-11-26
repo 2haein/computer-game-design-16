@@ -30,3 +30,9 @@ func _on_Exit_gui_input(event):
 	if event is InputEventMouseButton:
 		get_tree().quit()
 		pass # Replace with function body.
+
+
+func _on_Back_gui_input(event):
+	if event is InputEventMouseButton:
+		get_node("/root/globall").goto_scene("res://MainMenu.tscn")
+		pass # Replace with function body.
