@@ -45,10 +45,10 @@ __meta__ = {
 }
 
 [node name="GameRestart" type="TextureRect" parent="."]
-margin_left = 432.064
-margin_top = 693.239
-margin_right = 917.064
-margin_bottom = 838.239
+margin_left = 429.394
+margin_top = 591.791
+margin_right = 914.394
+margin_bottom = 736.791
 texture = ExtResource( 2 )
 stretch_mode = 3
 script = ExtResource( 6 )
@@ -57,10 +57,10 @@ __meta__ = {
 }
 
 [node name="Back" type="TextureRect" parent="."]
-margin_left = 431.105
-margin_top = 860.823
-margin_right = 916.105
-margin_bottom = 1005.82
+margin_left = 425.766
+margin_top = 751.366
+margin_right = 910.766
+margin_bottom = 896.366
 texture = ExtResource( 4 )
 stretch_mode = 3
 script = ExtResource( 6 )
