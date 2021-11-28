@@ -110,10 +110,10 @@ __meta__ = {
 
 [node name="PowerUpContainer" type="Control" parent="UI"]
 modulate = Color( 1, 1, 1, 0.784314 )
-margin_left = 7.93701
-margin_top = 991.118
-margin_right = 47.937
-margin_bottom = 1031.12
+margin_left = 19.1616
+margin_top = 827.238
+margin_right = 59.1616
+margin_bottom = 867.24
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -153,10 +153,10 @@ __meta__ = {
 
 [node name="BombContainer" type="Control" parent="UI"]
 modulate = Color( 1, 1, 1, 0.784314 )
-margin_left = 7.93701
-margin_top = 1041.12
-margin_right = 47.937
-margin_bottom = 1081.12
+margin_left = 19.1616
+margin_top = 877.24
+margin_right = 59.1616
+margin_bottom = 917.24
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
