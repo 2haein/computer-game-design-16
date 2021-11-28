@@ -1,18 +1,20 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Player/Script/PlayerSpawner.gd" type="Script" id=1]
 [ext_resource path="res://EnemySpawner.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Player/Image/backgroundHigh.png" type="Texture" id=3]
 [ext_resource path="res://boosterParticles.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Player/Image/life.png" type="Texture" id=5]
+[ext_resource path="res://Player/Image/heart.png" type="Texture" id=5]
 [ext_resource path="res://Player/Script/IconContainer.gd" type="Script" id=6]
-[ext_resource path="res://Player/Image/powerUp.png" type="Texture" id=7]
+[ext_resource path="res://Player/Image/penguin.png" type="Texture" id=7]
 [ext_resource path="res://Player/Font/scoreFont.tres" type="DynamicFont" id=8]
 [ext_resource path="res://Player/Script/Score.gd" type="Script" id=9]
 [ext_resource path="res://Player/Image/bomb.png" type="Texture" id=10]
 [ext_resource path="res://assets/main_menu/exit.png" type="Texture" id=11]
 [ext_resource path="res://MainMenu.gd" type="Script" id=12]
 [ext_resource path="res://Player/PowerUpSpawner.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Player/Image/bullet.png" type="Texture" id=14]
+[ext_resource path="res://Player/Image/inventory.png" type="Texture" id=15]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -63,9 +65,36 @@ __meta__ = {
 
 [node name="UI" type="CanvasLayer" parent="."]
 
+[node name="Portrait" type="TextureRect" parent="UI"]
+modulate = Color( 1, 1, 1, 0.784314 )
+margin_right = 60.0
+margin_bottom = 60.0
+texture = ExtResource( 7 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Inventory" type="TextureRect" parent="UI"]
+modulate = Color( 1, 1, 1, 0.784314 )
+margin_left = 5.94257
+margin_top = 967.663
+margin_right = 65.9426
+margin_bottom = 1027.66
+rect_scale = Vector2( 3.08, 2.13011 )
+texture = ExtResource( 15 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="HeartsContainer" type="Control" parent="UI"]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_left = 61.2664
+margin_top = 6.21931
+margin_right = 101.266
+margin_bottom = 46.2193
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -120,9 +149,9 @@ __meta__ = {
 }
 
 [node name="Icon0" type="TextureRect" parent="UI/PowerUpContainer"]
-margin_right = 50.0
-margin_bottom = 50.0
-texture = ExtResource( 7 )
+margin_right = 60.0
+margin_bottom = 60.0
+texture = ExtResource( 14 )
 expand = true
 stretch_mode = 5
 __meta__ = {
@@ -130,10 +159,10 @@ __meta__ = {
 }
 
 [node name="Icon1" type="TextureRect" parent="UI/PowerUpContainer"]
-margin_left = 50.0
-margin_right = 100.0
-margin_bottom = 50.0
-texture = ExtResource( 7 )
+margin_left = 60.0
+margin_right = 120.0
+margin_bottom = 60.0
+texture = ExtResource( 14 )
 expand = true
 stretch_mode = 5
 __meta__ = {
@@ -141,10 +170,10 @@ __meta__ = {
 }
 
 [node name="Icon2" type="TextureRect" parent="UI/PowerUpContainer"]
-margin_left = 100.0
-margin_right = 150.0
-margin_bottom = 50.0
-texture = ExtResource( 7 )
+margin_left = 120.0
+margin_right = 180.0
+margin_bottom = 60.0
+texture = ExtResource( 14 )
 expand = true
 stretch_mode = 5
 __meta__ = {
@@ -163,8 +192,8 @@ __meta__ = {
 }
 
 [node name="Icon0" type="TextureRect" parent="UI/BombContainer"]
-margin_right = 50.0
-margin_bottom = 50.0
+margin_right = 60.0
+margin_bottom = 60.0
 texture = ExtResource( 10 )
 expand = true
 stretch_mode = 5
@@ -173,9 +202,9 @@ __meta__ = {
 }
 
 [node name="Icon1" type="TextureRect" parent="UI/BombContainer"]
-margin_left = 50.0
-margin_right = 100.0
-margin_bottom = 50.0
+margin_left = 60.0
+margin_right = 120.0
+margin_bottom = 60.0
 texture = ExtResource( 10 )
 expand = true
 stretch_mode = 5
@@ -184,9 +213,9 @@ __meta__ = {
 }
 
 [node name="Icon2" type="TextureRect" parent="UI/BombContainer"]
-margin_left = 100.0
-margin_right = 150.0
-margin_bottom = 50.0
+margin_left = 120.0
+margin_right = 180.0
+margin_bottom = 60.0
 texture = ExtResource( 10 )
 expand = true
 stretch_mode = 5

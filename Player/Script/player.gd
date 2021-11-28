@@ -13,6 +13,8 @@ var powerUp = 0
 var bomb = 3
 
 onready var explodeSound = $EnemyExplode
+onready var bombSound = $BombSound
+onready var powerUpSound = $PowerUpSound
 onready var guns = [$Gun0, $Gun1]
 onready var main = get_node("/root/globall").current_scene
 
@@ -74,6 +76,7 @@ func Bomb():
 		fruit.transform = global_transform
 		#fruit.scale = Vector3(25,25,25)
 		fruit.velocity = fruit.transform.basis.z * - 90
+		bombSound.play()
 		UpdateBombUI()
 	pass
 	
@@ -90,6 +93,7 @@ func _on_Area_body_entered(body):
 	elif body.is_in_group("PowerUp"):
 		body.queue_free()
 		if(powerUp < MaxPowerUp):
+			powerUpSound.play()
 			powerUp += 1
 			COOLDOWN -= 3
 			UpdatePowerUpUI()

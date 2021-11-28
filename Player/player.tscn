@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Blender Imports/patas.tres" type="Material" id=1]
 [ext_resource path="res://Blender Imports/pupila.tres" type="Material" id=2]
@@ -12,6 +12,8 @@
 [ext_resource path="res://Blender Imports/cuerpo 1.tres" type="Material" id=10]
 [ext_resource path="res://Blender Imports/ojos.tres" type="Material" id=11]
 [ext_resource path="res://Blender Imports/Material.tres" type="Material" id=12]
+[ext_resource path="res://Sounds/bomb.wav" type="AudioStream" id=13]
+[ext_resource path="res://Sounds/powerUp.mp3" type="AudioStream" id=14]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "Sphere002"
@@ -187,6 +189,12 @@ texture = ExtResource( 7 )
 [node name="EnemyExplode" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
 volume_db = -11.107
+
+[node name="BombSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+
+[node name="PowerUpSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
 
 [node name="Area" type="Area" parent="."]
 

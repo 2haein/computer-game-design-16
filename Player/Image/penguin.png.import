@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/game_over.PNG-fff0dbb74d082e6a8f6b14c32cabb0b4.stex"
+path="res://.import/penguin.png-2a99a89e802d3ad9c56fc556502c890b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/main_menu/game_over.PNG"
-dest_files=[ "res://.import/game_over.PNG-fff0dbb74d082e6a8f6b14c32cabb0b4.stex" ]
+source_file="res://Player/Image/penguin.png"
+dest_files=[ "res://.import/penguin.png-2a99a89e802d3ad9c56fc556502c890b.stex" ]
 
 [params]
 
