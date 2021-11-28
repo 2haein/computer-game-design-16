@@ -16,9 +16,9 @@ initial_velocity = 91.95
 scale_curve = SubResource( 2 )
 
 [sub_resource type="SpatialMaterial" id=4]
-albedo_color = Color( 0.960784, 1, 0.494118, 1 )
+albedo_color = Color( 0.141176, 0.27451, 0.6, 1 )
 emission_enabled = true
-emission = Color( 0.956863, 1, 0.596078, 1 )
+emission = Color( 0.0980392, 0.298039, 0.741176, 1 )
 emission_energy = 1.0
 emission_operator = 0
 emission_on_uv2 = false

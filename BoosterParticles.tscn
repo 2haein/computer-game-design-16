@@ -10,7 +10,7 @@ initial_velocity = 500.0
 
 [sub_resource type="SpatialMaterial" id=2]
 emission_enabled = true
-emission = Color( 1, 1, 1, 1 )
+emission = Color( 0.945098, 0.0784314, 0.0784314, 1 )
 emission_energy = 0.66
 emission_operator = 0
 emission_on_uv2 = false
