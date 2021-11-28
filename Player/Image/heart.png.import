@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/game_over.PNG-fff0dbb74d082e6a8f6b14c32cabb0b4.stex"
+path="res://.import/heart.png-51496f28731e5e5886bdca6d7c052f6a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/main_menu/game_over.PNG"
-dest_files=[ "res://.import/game_over.PNG-fff0dbb74d082e6a8f6b14c32cabb0b4.stex" ]
+source_file="res://Player/Image/heart.png"
+dest_files=[ "res://.import/heart.png-51496f28731e5e5886bdca6d7c052f6a.stex" ]
 
 [params]
 
