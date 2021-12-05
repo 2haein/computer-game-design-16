@@ -12,6 +12,7 @@ var COOLDOWN = 20 #공격 쿨탐
 var powerUp = 0
 var bomb = 3
 
+onready var anim = $AnimationPlayer
 onready var explodeSound = $EnemyExplode
 onready var bombSound = $BombSound
 onready var powerUpSound = $PowerUpSound
@@ -25,7 +26,11 @@ var FruitBomb = load("res://Player/FruitBomb.tscn")
 func _ready():
 	UpdatePowerUpUI()
 	UpdateBombUI()
+	PlayAnim()
 	pass
+	
+func PlayAnim():
+	anim.play("Idle")
 	
 func _physics_process(delta):
 	GetInput()

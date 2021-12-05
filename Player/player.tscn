@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Blender Imports/patas.tres" type="Material" id=1]
 [ext_resource path="res://Blender Imports/pupila.tres" type="Material" id=2]
@@ -119,12 +119,82 @@ surfaces/0 = {
 
 [sub_resource type="SphereShape" id=7]
 
+[sub_resource type="Animation" id=8]
+resource_name = "Dead"
+tracks/0/type = "value"
+tracks/0/path = NodePath("penguin:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.2, 0.5, 0.7, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 55.065, -90, 90 ), Vector3( 24.987, -90, 90 ), Vector3( -38.145, -90, 90 ), Vector3( -87.813, 89.9999, -89.9999 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("penguin:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.2, 0.999998 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 2.85842 ), Vector3( 0, 5.24325, 2.85842 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "Fire"
+
+[sub_resource type="Animation" id=10]
+resource_name = "Idle"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("penguin/arm:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.2, 0.4, 0.6, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 1.66892, 3.09846, -0.231483 ), Vector3( 1.669, 3.098, -0.633 ), Vector3( 1.66892, 3.09846, -0.519445 ), Vector3( 1.66892, 3.09846, -0.099118 ), Vector3( 1.669, 3.098, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("penguin/arm:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 0,
+"values": [  ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("penguin/foot:translation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.2, 0.4, 0.6, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -0.0888276, 0.806991, 1.45676e-08 ), Vector3( -0.0888276, 0.610756, 2.31453e-08 ), Vector3( -0.0888276, 0.810907, 1.43965e-08 ), Vector3( -0.0888276, 1.05795, 3.59771e-09 ), Vector3( -0.0888276, 0.813305, 1.42917e-08 ) ]
+}
+
 [node name="player" type="KinematicBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.124018, -0.164726, 0.023613 )
 script = ExtResource( 5 )
 
 [node name="penguin" type="Spatial" parent="."]
-transform = Transform( -1, -8.74228e-08, 3.82137e-15, 0, -4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, 0.0892258, 0, 2.63607 )
+transform = Transform( -1, 8.74228e-08, 4.37114e-08, -4.37114e-08, 1.91069e-15, -1, -8.74228e-08, -1, 1.91069e-15, 0, 0, 2.85842 )
 
 [node name="Point003" type="Spatial" parent="penguin"]
 transform = Transform( 5.96046e-08, 0, 1, 0, 1, 0, -1, 0, 5.96046e-08, 1.48144, 46.3793, 13.1547 )
@@ -148,19 +218,19 @@ transform = Transform( 0.644646, 0, 0, 0, 0.0777799, -0.706708, 0, 0.471139, 0.1
 mesh = SubResource( 2 )
 material/0 = null
 
-[node name="Circle" type="MeshInstance" parent="penguin"]
+[node name="body" type="MeshInstance" parent="penguin"]
 transform = Transform( 0.2, 0, 0, 0, 0.202679, 0, 0, 0, 0.2, -0.0126674, 3.2612, 0 )
 mesh = SubResource( 3 )
 material/0 = null
 material/1 = null
 
-[node name="Circle002" type="MeshInstance" parent="penguin"]
-transform = Transform( 0.0628427, 0.12594, 6.85125e-09, 0.12594, -0.0628427, -1.10755e-08, -6.85125e-09, 1.10755e-08, -0.140748, 1.50565, 3.09846, 0 )
+[node name="arm" type="MeshInstance" parent="penguin"]
+transform = Transform( 0.0628314, 0.125916, 0.00274621, 0.12594, -0.0628433, -1.10831e-09, 0.00122617, 0.00245728, -0.140721, 1.669, 3.098, 0 )
 mesh = SubResource( 4 )
 material/0 = null
 
-[node name="Sphere001" type="MeshInstance" parent="penguin"]
-transform = Transform( 0.884226, 0.0355869, -0.118884, 1.65626e-09, 0.703478, 0.539082, -0.0939192, 0.335042, -1.11927, -0.0888276, 1.14026, 0 )
+[node name="foot" type="MeshInstance" parent="penguin"]
+transform = Transform( 0.884226, 0.0355869, -0.118884, 1.65626e-09, 0.703478, 0.539082, -0.0939192, 0.335042, -1.11927, -0.0888276, 0.813305, 1.42917e-08 )
 mesh = SubResource( 5 )
 material/0 = null
 
@@ -202,5 +272,10 @@ stream = ExtResource( 14 )
 [node name="CollisionShape" type="CollisionShape" parent="Area"]
 transform = Transform( 2.44365, 0, 0, 0, 2.44365, 0, 0, 0, 2.44365, 0, 0, 0 )
 shape = SubResource( 7 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Dead = SubResource( 8 )
+anims/Fire = SubResource( 9 )
+anims/Idle = SubResource( 10 )
 
 [connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]
