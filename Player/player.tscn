@@ -239,11 +239,8 @@ transform = Transform( 0.612853, 0, 0, 0, 0, -0.27776, 0, 0.56, 0, 0, 3.67989, 0
 mesh = SubResource( 6 )
 material/0 = null
 
-[node name="Gun0" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -3 )
-
-[node name="Gun1" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, -3 )
+[node name="Gun" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.5 )
 
 [node name="target" type="Sprite3D" parent="."]
 transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, -60.8083 )
