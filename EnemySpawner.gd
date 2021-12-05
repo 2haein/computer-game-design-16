@@ -33,7 +33,7 @@ func spawn_Jellyfish():
 
 
 func _on_Timer_timeout():
-	if (count < 1):
+	if (count < 10):
 		main.get_node("UI").get_node("Stage1").show()
 		spawn_Shark()
 	elif(count < 20):
