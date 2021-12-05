@@ -90,6 +90,7 @@ func _on_Area_body_entered(body):
 		main.get_node("PlayerSpawner").OnPlayerDead()
 		body.queue_free()
 		queue_free()
+		
 	elif body.is_in_group("PowerUp"):
 		body.queue_free()
 		if(powerUp < MaxPowerUp):

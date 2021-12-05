@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Player/Script/PlayerSpawner.gd" type="Script" id=1]
 [ext_resource path="res://EnemySpawner.tscn" type="PackedScene" id=2]
@@ -15,6 +15,9 @@
 [ext_resource path="res://Player/PowerUpSpawner.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Player/Image/bullet.png" type="Texture" id=14]
 [ext_resource path="res://Player/Image/inventory.png" type="Texture" id=15]
+[ext_resource path="res://assets/stage1.png" type="Texture" id=16]
+[ext_resource path="res://assets/stage3.png" type="Texture" id=18]
+[ext_resource path="res://assets/stage2.png" type="Texture" id=19]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -51,10 +54,10 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="WorldEnvironment/Control"]
-margin_left = 1.9798
-margin_top = -1.0
-margin_right = 1419.98
-margin_bottom = 1099.0
+margin_left = 1.0
+margin_top = 4.0
+margin_right = 1419.0
+margin_bottom = 1104.0
 rect_pivot_offset = Vector2( 1232.62, 291.895 )
 texture = ExtResource( 3 )
 expand = true
@@ -246,6 +249,36 @@ rect_scale = Vector2( 0.879999, 1 )
 texture = ExtResource( 15 )
 expand = true
 stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Stage1" type="TextureRect" parent="UI"]
+visible = false
+margin_left = 460.0
+margin_top = 69.0
+margin_right = 953.0
+margin_bottom = 245.0
+texture = ExtResource( 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Stage2" type="TextureRect" parent="UI"]
+visible = false
+margin_left = 459.0
+margin_top = 67.0
+margin_right = 952.0
+margin_bottom = 243.0
+texture = ExtResource( 19 )
+
+[node name="Stage3" type="TextureRect" parent="UI"]
+visible = false
+margin_left = 461.0
+margin_top = 69.0
+margin_right = 954.0
+margin_bottom = 245.0
+texture = ExtResource( 18 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

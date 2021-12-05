@@ -15,7 +15,7 @@ func _on_Area_body_entered(body):
 		var particles = KillParticles.instance()
 		main.add_child(particles)
 		particles.transform.origin = transform.origin
-		body.queue_free()
+		body.hit()
 		explodeSound.play()
 		GetScore(bulletHitScore)
 		visible = false
