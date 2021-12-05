@@ -16,7 +16,7 @@ onready var anim = $AnimationPlayer
 onready var explodeSound = $EnemyExplode
 onready var bombSound = $BombSound
 onready var powerUpSound = $PowerUpSound
-onready var guns = [$Gun0, $Gun1]
+onready var gun = [$Gun]
 onready var main = get_node("/root/globall").current_scene
 
 # onready var main = get_tree().current_scene
@@ -63,11 +63,10 @@ func Shoot(delta):
 	#shooting
 	if Input.is_action_pressed("ui_select") and cooldown <= 0:
 		cooldown = COOLDOWN * delta
-		for i in guns:
-			var bullet = Bullet.instance()
-			main.add_child(bullet)
-			bullet.transform = i.global_transform
-			bullet.velocity = bullet.transform.basis.z * -600
+		var bullet = Bullet.instance()
+		main.add_child(bullet)
+		bullet.transform = global_transform
+		bullet.velocity = bullet.transform.basis.z * -600
 	#cooldown
 	if cooldown > 0:
 		cooldown -= delta
