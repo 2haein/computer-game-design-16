@@ -13,8 +13,8 @@ autostart = true
 wait_time = 0.5
 
 [node name="StageTimer" type="Timer" parent="."]
-wait_time = 5.0
-one_shot = true
+wait_time = 2.0
+autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]

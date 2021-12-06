@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Player/Script/PlayerSpawner.gd" type="Script" id=1]
 [ext_resource path="res://EnemySpawner.tscn" type="PackedScene" id=2]
@@ -21,6 +21,121 @@
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Stage1:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Stage2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Stage3:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Stage1Fadein"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Stage1:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.513726 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "Stage1Fadeout"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Stage1:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.45098 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "Stage2Fadein"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Stage2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.486275 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "Stage2Fadeout"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Stage2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "Stage3Fadein"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Stage3:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
 
 [node name="Main" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.909283, -0.121488, -0.013252 )
@@ -254,7 +369,7 @@ __meta__ = {
 }
 
 [node name="Stage1" type="TextureRect" parent="UI"]
-visible = false
+modulate = Color( 1, 1, 1, 0 )
 margin_left = 460.0
 margin_top = 69.0
 margin_right = 953.0
@@ -265,15 +380,18 @@ __meta__ = {
 }
 
 [node name="Stage2" type="TextureRect" parent="UI"]
-visible = false
+modulate = Color( 1, 1, 1, 0 )
 margin_left = 459.0
 margin_top = 67.0
 margin_right = 952.0
 margin_bottom = 243.0
 texture = ExtResource( 19 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Stage3" type="TextureRect" parent="UI"]
-visible = false
+modulate = Color( 1, 1, 1, 0 )
 margin_left = 461.0
 margin_top = 69.0
 margin_right = 954.0
@@ -282,5 +400,13 @@ texture = ExtResource( 18 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI"]
+anims/RESET = SubResource( 2 )
+anims/Stage1Fadein = SubResource( 3 )
+anims/Stage1Fadeout = SubResource( 4 )
+anims/Stage2Fadein = SubResource( 5 )
+anims/Stage2Fadeout = SubResource( 6 )
+anims/Stage3Fadein = SubResource( 7 )
 
 [connection signal="gui_input" from="UI/Exit" to="PlayerSpawner" method="_on_Exit_gui_input"]

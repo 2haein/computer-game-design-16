@@ -11,5 +11,6 @@ func _physics_process(delta):
 func hit():
 	if(HP <= 0) :
 		queue_free()
+		
 	else :
 		HP -= 1

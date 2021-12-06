@@ -6,7 +6,7 @@
 [ext_resource path="res://BurnedParticles.tscn" type="PackedScene" id=5]
 
 [sub_resource type="GDScript" id=3]
-script/source = "extends KinematicBody
+script/source = "xtends KinematicBody
 
 var SPEED = rand_range(20,50)
 

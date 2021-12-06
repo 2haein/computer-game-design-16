@@ -5,6 +5,7 @@ var KillParticles = load("res://KillParticles.tscn")
 onready var main =  get_node("/root/globall").current_scene
 onready var explodeSound = $EnemyExplode
 const bulletHitScore = 10
+
 func _physics_process(delta):
 	move_and_slide(velocity)
 	if transform.origin.z < -300:
@@ -16,8 +17,8 @@ func _on_Area_body_entered(body):
 		main.add_child(particles)
 		particles.transform.origin = transform.origin
 		body.hit()
-		explodeSound.play()
 		GetScore(bulletHitScore)
+		explodeSound.play()
 		visible = false
 		$Area/CollisionShape.disabled = true
 
