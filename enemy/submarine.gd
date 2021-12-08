@@ -1,7 +1,7 @@
 extends KinematicBody
 
 var SPEED = 100
-export (int) var HP = 200
+export (int) var HP = 60
 onready var bgm = $BossBgm
 
 func _physics_process(delta):
