@@ -5,7 +5,7 @@ var Shark= load("res://enemy/shark.tscn")
 var Whale = load("res://enemy/whale.tscn")
 var Submarine = load("res://enemy/submarine.tscn")
 var Jellyfish = load("res://enemy/jellyfish.tscn")
-onready var audiostream = $BossBgm
+
 var count = 0
 var animations = ["Stage1Fadein", "Stage1Fadeout", "Stage2Fadein", "Stage2Fadeout", "Stage3Fadein"]
 
@@ -47,13 +47,14 @@ func _on_Timer_timeout():
 			
 		spawn_Whale()
 	else :
-		if (count == 20):
+		if (count == 22):
 			main.get_node("UI").get_node("AnimationPlayer").play(animations[4])
 			
-		spawn_Submarine()
-		$Timer.stop()
-		$Timer2.start()
+			spawn_Submarine()
+			$Timer.stop()
+			$Timer2.start()
 	count += 1
 
 func _on_Timer2_timeout():
 	spawn_Jellyfish()
+

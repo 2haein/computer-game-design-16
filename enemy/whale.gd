@@ -1,7 +1,7 @@
 extends KinematicBody
 
 var SPEED = rand_range(30,40)
-export (int) var HP = 3
+export (int) var HP = 2
 
 func _physics_process(delta):
 	move_and_slide(Vector3(0,0,SPEED))
@@ -9,7 +9,7 @@ func _physics_process(delta):
 		queue_free()
 
 func hit():
-	if(HP <= 0) :
+	if(HP <= 1) :
 		queue_free()
 		
 	else :
